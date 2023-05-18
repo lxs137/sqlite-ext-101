@@ -1,14 +1,13 @@
 #ifndef _SQLITE_EXT_TICK_H
 #define _SQLITE_EXT_TICK_H
 
-
 #include "sqlite/sqlite3.h"
 #include "sqlite/sqlite3ext.h"
 
 SQLITE_EXTENSION_INIT1
 
-#ifndef SQLITE_EXT_TICK_VERSION
-#define SQLITE_EXT_TICK_VERSION "0.0.0"
+#ifndef SQLITE_EXT_VERSION
+#define SQLITE_EXT_VERSION "0.0.0"
 #endif
 
 #ifdef __cplusplus

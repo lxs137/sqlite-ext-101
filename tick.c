@@ -16,7 +16,7 @@
 
 static void tick_version(sqlite3_context *context, int argc,
                          sqlite3_value **argv) {
-  sqlite3_result_text(context, SQLITE_EXT_TICK_VERSION, -1, SQLITE_STATIC);
+  sqlite3_result_text(context, SQLITE_EXT_VERSION, -1, SQLITE_STATIC);
 }
 
 static void tick(sqlite3_context *context, int argc, sqlite3_value **argv) {
