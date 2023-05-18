@@ -24,7 +24,7 @@ static void vector_to_blob(sqlite3_context *context, int argc,
   assert(argc == 1);
   Vector *vec = parse_vector(argv[0]);
   if (vec == NULL) {
-    sqlite3_result_text(context, "invalid vector", -1, SQLITE_STATIC);
+    sqlite3_result_error(context, "invalid vector", -1);
     return;
   }
   char *vecDetail = sqlite3_mprintf("vector{ dim: %d }", vec->dim);
