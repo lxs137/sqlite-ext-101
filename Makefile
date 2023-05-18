@@ -1,8 +1,10 @@
+CC = gcc
 VERSION=$(shell cat VERSION)
 LOADABLE_EXTENSION=so
 SQLITE_BIN=sqlite3
 
-C_DEFINE=-DSQLITE_TICK_VERSION="\"$(VERSION)\""
+CMACROS= -DSQLITE_EXT_TICK_VERSION="\"$(VERSION)\""
+CFLAGS= -fPIC -shared -Ilibs -O3 $(CMACROS)
 
 DIST=out
 $(DIST):
@@ -14,10 +16,7 @@ TARGET_LOADABLE=$(TARGET_LOADABLE_TICK)
 all: $(TARGET_LOADABLE)
 
 $(TARGET_LOADABLE_TICK): tick.c $(DIST)
-	gcc -fPIC -shared \
-	-Ilibs \
-	-O3 \
-	$(C_DEFINE) $(CFLAGS) \
+	$(CC) $(CFLAGS) \
 	$< -o $@
 
 clean:

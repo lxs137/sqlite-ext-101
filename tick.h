@@ -1,11 +1,14 @@
-#ifndef _SQLITE_TICK_H
-#define _SQLITE_TICK_H
+#ifndef _SQLITE_EXT_TICK_H
+#define _SQLITE_EXT_TICK_H
+
 
 #include "sqlite/sqlite3.h"
 #include "sqlite/sqlite3ext.h"
 
-#ifndef SQLITE_TICK_VERSION
-#define SQLITE_TICK_VERSION "0.0.0"
+SQLITE_EXTENSION_INIT1
+
+#ifndef SQLITE_EXT_TICK_VERSION
+#define SQLITE_EXT_TICK_VERSION "0.0.0"
 #endif
 
 #ifdef __cplusplus
@@ -18,4 +21,4 @@ int sqlite3_tick_init(sqlite3*, char**, const sqlite3_api_routines*);
 }
 #endif
 
-#endif /* ifndef _SQLITE_TICK_H */
+#endif /* ifndef _SQLITE_EXT_TICK_H */
