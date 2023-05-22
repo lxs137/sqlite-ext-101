@@ -1,10 +1,11 @@
-CC = gcc
+CC=gcc
 VERSION=$(shell cat VERSION)
 LOADABLE_EXTENSION=so
 SQLITE_BIN=sqlite3
+CFLAGS_DBG=-ggdb
 
 CMACROS= -DSQLITE_EXT_VERSION="\"$(VERSION)\""
-CFLAGS= -fPIC -shared -Ilibs -O3 $(CMACROS)
+CFLAGS= -fPIC -shared -Ilibs -O3 $(CMACROS) $(CFLAGS_DBG)
 
 DIST=out
 $(DIST):
